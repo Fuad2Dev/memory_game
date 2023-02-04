@@ -1,0 +1,51 @@
+/* .ball-big {
+    width: 20%;
+    border-radius: 50%;
+    background-color: #152938;
+    line-height: 0;
+    position: relative;
+}
+
+.ball-big::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+} */
+
+.ball-big {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+
+}
+
+.ball-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@media (min-width: 540px){
+    .ball-big {
+        width: 118px;
+        height: 118px;
+    }
+
+    .ball-small {
+        width: 82px;
+        height: 82px;
+        /* border-radius: 50%; */
+    }
+}
+
+.ball-close {
+    background-color: #304859;
+}
+
+.ball-open {
+    background: #BCCED9;
+}
+
+.ball-active {
+    background: #FDA214;
+}

@@ -1,6 +1,10 @@
 @import "font.css";
 @import "button.css";
 @import "color.css";
+@import "layout.css";
+@import "card.css";
+@import "ball.css";
+
 /* colors */
 .bg-dark-blue {
     background: #152938;   
@@ -9,53 +13,47 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.card{
-    background-color: #FCFCFC;
-    padding: 20px 40px;
-    border-radius: 10px;
-    width: 87%;
-    margin: 0 auto;
-    max-width: 654px;
+a {
+    all: unset;
 }
 
-/* flex - layout */
-.flex {
+/* class="flex justify-between p-2" */
+nav{
     display: flex;
-}
-
-.flex-column{
-    flex-direction: column;
-}
-
-.justify-center{
-    justify-content: center;
-}
-
-.justify-between{
     justify-content: space-between;
+    /* padding: 40px 30px 0px; */
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 40px;
 }
 
-.align-items-center {
-    align-items: center;
+/* show/hide */
+.hide-small {
+    display: none;
+}
+@media (min-width: 540px){
+    a.hide-small {
+        display: inline;
+    }
+
+    .hide-small{
+        display: block;
+    }
+   
+    .hide-large {
+        display: none;
+    } 
+}
+
+@media (min-width: 830px){
+
 }
 
 
-/* spacing */
 
-.space-x > * + *{
-    margin-left: 10px;
-}
 
-.space-y > * + *{
-    margin-top: 25px;
-}
 
-.my-3 {
-    margin: 30px 0;
-}
 
-.my-1 {
-    margin: 10px 0;
-}
