@@ -19,29 +19,40 @@
       <div>
         <p class="text-dark-grey my-1">Select Theme</p>
         <div class="flex justify-between">
-          <button class="menu btn btn-medium active">Numbers</button>
-          <button class="menu btn btn-medium">Icons</button>
+          <button id="numbers" class="theme menu btn btn-medium active">
+            Numbers
+          </button>
+          <button id="icons" class="theme menu btn btn-medium">Icons</button>
         </div>
       </div>
       <div>
         <p class="text-dark-grey my-1">Number of Players</p>
         <div class="flex space-x justify-between">
-          <button class="menu btn btn-small active">1</button>
-          <button class="menu btn btn-small">2</button>
-          <button class="menu btn btn-small">3</button>
-          <button class="menu btn btn-small">4</button>
+          <button id="1" class="players menu btn btn-small active">1</button>
+          <button id="2" class="players menu btn btn-small">2</button>
+          <button id="3" class="players menu btn btn-small">3</button>
+          <button id="4" class="players menu btn btn-small">4</button>
         </div>
       </div>
       <div>
         <p class="text-dark-grey my-1">Grid Size</p>
         <div class="flex justify-between">
-          <button class="menu btn btn-medium active">4x4</button>
-          <button class="menu btn btn-medium">6x6</button>
+          <button id="4x4" class="size menu btn btn-medium active">4x4</button>
+          <button id="6x6" class="size menu btn btn-medium">6x6</button>
         </div>
       </div>
       <div class="flex justify-center">
-        <button class="btn btn-large bg-yellow text-white">Start Game</button>
+        <button
+          onclick="startGame()"
+          class="btn btn-large bg-yellow text-white"
+        >
+          Start Game
+        </button>
       </div>
     </div>
+
+    <script src="./js/functions.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/start.js"></script>
   </body>
 </html>

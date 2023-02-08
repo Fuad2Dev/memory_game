@@ -1,22 +1,19 @@
-/* .ball-big {
-    width: 20%;
-    border-radius: 50%;
-    background-color: #152938;
-    line-height: 0;
-    position: relative;
+.ball{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
 }
-
-.ball-big::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-} */
 
 .ball-big {
     width: 72px;
     height: 72px;
     border-radius: 50%;
+}
 
+.ball-big > span {
+    font-size: 56px;
 }
 
 .ball-small {
