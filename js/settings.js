@@ -1,6 +1,6 @@
 let theme = "numbers";
 let players = 1;
-let size = 4;
+let size = "4x4";
 
 function setTheme(e) {
   let elements = document.querySelectorAll(".theme");
@@ -26,21 +26,24 @@ function setPlayer(e) {
 }
 
 function setSize(e) {
-  let elements = document.querySelectorAll(".size");
-
-  elements.forEach((element) => {
-    element.classList.remove("active");
-  });
+  unsetAll(".size");
   document.getElementById(e.target.id).classList.add("active");
 
   size = e.target.id;
 }
 
+function unsetAll(selector) {
+  let elements = document.querySelectorAll(selector);
+
+  elements.forEach((element) => {
+    element.classList.remove("active");
+  });
+}
+
 function setUrl() {
   let $url;
 
-  $url = size == 4 ? "4x4" : "6x6";
-  $url += players == 1 ? "/solo.html" : "/multi.html";
+  $url = size + (players == 1) ? "/solo.html" : "/multi.html";
 
   return $url;
 }
@@ -48,13 +51,13 @@ function setUrl() {
 function startGame() {
   // localStorage.setItem("theme", theme);
   localStorage.setItem("players", players);
+  localStorage.setItem("turn", 0);
   localStorage.setItem("size", size);
 
-  // if (size == 4) {
-
-  // } else {
-
-  // }
-
-  location.href = "../views/" + setUrl();
+  location.href =
+    "../views/" + size + (players == 1 ? "/solo.html" : "/multi.html");
 }
+
+addEventListener("theme", "click", setTheme);
+addEventListener("players", "click", setPlayer);
+addEventListener("size", "click", setSize);

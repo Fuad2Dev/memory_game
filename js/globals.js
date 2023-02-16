@@ -25,4 +25,23 @@ function delay($previous, $current) {
   }, 1000);
 }
 
-window.history.forward();
+function preventBackRoute() {
+  window.history.forward();
+}
+
+function switchTurn() {
+  document
+    .querySelectorAll(".multi-card")
+    [localStorage.getItem("turn")].classList.remove("turn");
+
+  if (localStorage.getItem("turn") == localStorage.getItem("players") - 1) {
+    localStorage.setItem("turn", 0);
+  } else {
+    localStorage.setItem("turn", Number(localStorage.getItem("turn")) + 1);
+  }
+
+  // console.log(localStorage.getItem("turn"));
+  document
+    .querySelectorAll(".multi-card")
+    [localStorage.getItem("turn")].classList.add("turn");
+}

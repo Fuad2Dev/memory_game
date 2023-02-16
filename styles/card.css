@@ -43,6 +43,15 @@
     display: none;
 }
 
+.turn {
+    background-color: #FDA214;
+    color: #FCFCFC;
+}
+
+.turn>p {
+    color: #FCFCFC;
+}
+
 @media (min-width: 540px) {
     .multi-card{
         padding: 5px 20px;

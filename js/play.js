@@ -1,6 +1,6 @@
 let $previous = null;
 
-function play(e) {
+function move(e) {
   let $current = this.childNodes[0];
 
   $current.style.display = "block";
@@ -8,16 +8,15 @@ function play(e) {
   checkPair($current);
 }
 
-addEventListener("ball", "click", play);
-
 function checkPair($current) {
   // if has pair
   if ($previous != null) {
+    switchTurn();
     if ($previous.innerText != $current.innerText) {
       delay($previous, $current);
     } else {
-      $previous.parentNode.removeEventListener("click", play);
-      $current.parentNode.removeEventListener("click", play);
+      $previous.parentNode.removeEventListener("click", move);
+      $current.parentNode.removeEventListener("click", move);
     }
 
     $previous = null;
@@ -25,3 +24,5 @@ function checkPair($current) {
     $previous = $current;
   }
 }
+
+addEventListener("ball", "click", move);
