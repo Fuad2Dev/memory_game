@@ -45,3 +45,36 @@ function switchTurn() {
     .querySelectorAll(".multi-card")
     [localStorage.getItem("turn")].classList.add("turn");
 }
+
+function startTimer(timerElement) {
+  // Save the current timestamp
+  const startTime = Date.now();
+
+  // Start the timer by updating the elapsed time every second
+  intervalId = setInterval(() => {
+    // Calculate the elapsed time by subtracting the start time from the current time
+    elapsedTime = Date.now() - startTime;
+
+    // Format the elapsed time as MM:SS
+    const minutes = Math.floor((elapsedTime / (1000 * 60)) % 60)
+      .toString()
+      .padStart(2, "0");
+    const seconds = Math.floor((elapsedTime / 1000) % 60)
+      .toString()
+      .padStart(2, "0");
+    const timeString = `${minutes}:${seconds}`;
+
+    // Update the timer element with the elapsed time
+    timerElement.textContent = timeString;
+  }, 1000);
+}
+
+function stopTimer() {
+  // Stop the timer by clearing the interval ID
+  clearInterval(intervalId);
+}
+
+function updateMoves() {
+  moves_dom = document.querySelector('#moves')
+  moves_dom.innerText = Number(moves_dom.innerText) + 1
+}

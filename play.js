@@ -10,14 +10,15 @@ function move(e) {
 
 function checkPair($current) {
   // if has pair
-  let isFirstPlay = ($previous == null)
+  let isFirstPlay = $previous == null;
 
   if (isFirstPlay) {
     $previous = $current;
   } else {
-    let isEqual = $previous.innerText == $current.innerText
+    let isEqual = $previous.innerText == $current.innerText;
 
-    switchTurn(isEqual);
+    if (players > 1) switchTurn(isEqual);
+    else updateMoves();
 
     if (isEqual) {
       $previous.parentNode.removeEventListener("click", move);
