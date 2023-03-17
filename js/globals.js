@@ -22,6 +22,9 @@ function delay($previous, $current) {
   setTimeout(function () {
     $current.style.display = "none";
     $previous.style.display = "none";
+
+    $previous.parentNode.style.background = "";
+    $current.parentNode.style.background = "";
   }, 1000);
 }
 
@@ -75,6 +78,6 @@ function stopTimer() {
 }
 
 function updateMoves() {
-  moves_dom = document.querySelector('#moves')
-  moves_dom.innerText = Number(moves_dom.innerText) + 1
+  moves_dom = document.querySelector("#moves");
+  moves_dom.innerText = Number(moves_dom.innerText) + 1;
 }

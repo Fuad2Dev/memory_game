@@ -1,8 +1,9 @@
 let $previous = null;
 
 function move(e) {
+  this.style.background = "#FDA214";
   let $current = this.childNodes[0];
-
+  
   $current.style.display = "block";
 
   checkPair($current);
@@ -23,6 +24,9 @@ function checkPair($current) {
     if (isEqual) {
       $previous.parentNode.removeEventListener("click", move);
       $current.parentNode.removeEventListener("click", move);
+      
+      $previous.parentNode.style.background = "#BCCED9";
+      $current.parentNode.style.background = "#BCCED9";
     } else {
       delay($previous, $current);
     }
