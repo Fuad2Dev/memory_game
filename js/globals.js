@@ -32,7 +32,11 @@ function preventBackRoute() {
   window.history.forward();
 }
 
-function switchTurn() {
+function switchTurn(isEqual) {
+  if(isEqual){
+    let score = document.querySelector(".turn h3")
+    score.innerText = Number(score.innerText) + 1
+  } 
   document
     .querySelectorAll(".multi-card")
     [localStorage.getItem("turn")].classList.remove("turn");
@@ -80,4 +84,21 @@ function stopTimer() {
 function updateMoves() {
   moves_dom = document.querySelector("#moves");
   moves_dom.innerText = Number(moves_dom.innerText) + 1;
+}
+
+function hasDuplicateOf(num, arr){
+  const duplicates = arr.filter((val, index) => {
+    return arr.indexOf(val) !== index && val === num;
+  });
+  
+  return duplicates.length > 0
+}
+
+function draw(){
+  alert('draw')
+}
+
+function win($max, $scores){
+  $player = $scores.indexOf($max) + 1
+  alert(`player ${player} wins`)
 }

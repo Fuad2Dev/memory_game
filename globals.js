@@ -30,11 +30,10 @@ function preventBackRoute() {
 }
 
 function switchTurn(isEqual) {
-  
-  if(isEqual){
-    let score = document.querySelector(".turn h3")
-    score.innerText = Number(score.innerText) + 1
-  } 
+  if (isEqual) {
+    let score = document.querySelector(".turn h3");
+    score.innerText = Number(score.innerText) + 1;
+  }
   document.querySelector(".turn").classList.remove("turn");
 
   if (localStorage.getItem("turn") == localStorage.getItem("players") - 1) {
@@ -47,4 +46,23 @@ function switchTurn(isEqual) {
   document
     .querySelectorAll(".multi-card")
     [localStorage.getItem("turn")].classList.add("turn");
+}
+
+function hasDuplicateOf(num, arr) {
+  const duplicates = arr.filter((val, index) => {
+    return arr.indexOf(val) !== index && val === num;
+  });
+
+  return duplicates.length > 0;
+}
+
+function draw($player) {
+  
+  document.querySelector("#who_won").innerText = `Player ${$player} wins!`
+}
+
+function win($max) {
+  document.querySelectorAll(".multi-card h3").forEach((element) => {
+    if (element.innerText == $max) element.parentNode.classList.add("winner");
+  });
 }

@@ -46,3 +46,7 @@
 .ball-active {
     background: #FDA214;
 }
+
+.matched{
+    background: #BCCED9 !important
+}

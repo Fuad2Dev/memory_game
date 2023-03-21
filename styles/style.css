@@ -4,6 +4,7 @@
 @import "layout.css";
 @import "card.css";
 @import "ball.css";
+@import "modal.css";
 
 /* colors */
 .bg-dark-blue {
